@@ -1,0 +1,117 @@
+%-------------------------
+% Variant: CLASSIC (Wharton / HBS / Banking)
+% Pure B&W, dense, serif, traditional finance
+%-------------------------
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{needspace}
+
+\RaggedRight
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\tolerance=1000
+\emergencystretch=3em
+
+\pagestyle{empty}
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
+
+% Section formatting: small caps, bold, hairline rule
+\titleformat{\section}
+  {\scshape\bfseries\large}{}{0em}{}[\vspace{-4pt}\hrule height 0.4pt\vspace{2pt}]
+\titlespacing*{\section}{0pt}{8pt}{2pt}
+
+\setlist[itemize]{leftmargin=15pt, itemsep=1pt, parsep=0pt, topsep=2pt}
+
+\newcommand{\role}[4]{%
+  \needspace{4\baselineskip}%
+  \noindent\textbf{#1} \hfill \textit{#2} \\
+  \textit{#3} \hfill \textit{#4} \\[-4pt]
+}
+
+\newcommand{\project}[3]{%
+  \needspace{4\baselineskip}%
+  \noindent\textbf{#1} \hfill \textit{#3} \\
+  \textit{#2} \\[-4pt]
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Alan Wrya} \\[4pt]
+  {\small Toronto, ON $\cdot$ \href{mailto:alan.wrya@torontomu.ca}{alan.wrya@torontomu.ca} $\cdot$ (416) 939-5417} \\
+  {\small \href{https://www.linkedin.com/in/alan-w-499547298/}{linkedin.com/in/alan-w} $\cdot$ \href{https://github.com/left-nullspace}{github.com/left-nullspace}}
+\end{center}
+
+\section*{Summary}
+\hrule height 0.4pt \vspace{2pt}
+\noindent Final-year Financial Mathematics Co-op student passionate about trading, financial markets, and quantitative research. Hands-on experience across bank-side analytics (TD Direct Investing), portfolio research (cluster-constrained MV optimization), and trading-software development (Anomalies platform).
+
+\section*{Education}
+\role{Toronto Metropolitan University}{Toronto, ON}{Bachelor of Science (BSc), Financial Mathematics Co-op $|$ Computer Science Minor}{Sept 2022 -- June 2026}
+\begin{itemize}
+  \item \textbf{CGPA: 3.81} $|$ Dean's List Scholar
+  \item \textit{Relevant Coursework:} Stochastic Calculus, Partial Differential Equations, Investment Analysis, Managerial Finance, Probability \& Statistics, Linear Algebra, Differential Equations, Data Structures, Computer Science
+\end{itemize}
+
+\section*{Experience}
+\role{TD Bank}{Toronto, ON}{Co-op, Direct Investing Journey Analyst}{Jan 2025 -- Aug 2025}
+\begin{itemize}
+  \item Rebuilt 12+ monthly KPI dashboards in Excel using VBA, LAMBDA functions, dynamic named ranges, and reusable chart templates, reducing manual refresh time from 2-5 hours per week to under 5 minutes per dashboard.
+  \item Engineered automated 24-month rolling performance charts with dynamic labels and auto-scaling axes, enabling leadership to refresh reports on demand and standardize reporting across the team.
+  \item Built client segmentation frameworks and ran correlation and regression analysis on three years of monthly client data to surface drivers of retention, funding, and engagement.
+  \item Led analytics tagging plans for new Direct Investing features: reviewed wireframes, scoped high-value events, presented to tagging and analytics teams, and coordinated risk sign-off across product, analytics, and 1B controls.
+  \item Ran feature-launch lookback analyses on enhanced search adoption and mobile vs.\ desktop trading behaviour in Adobe Analytics and Excel to inform roadmap prioritization and executive-facing recommendations.
+  \item Took on expanded analytics, stakeholder, and reporting responsibilities during the manager's parental leave.
+\end{itemize}
+
+\role{Ted Rogers Sales \& Trading (TRST)}{Toronto, ON}{Quantitative Analyst}{Sept 2023 -- Dec 2025}
+\begin{itemize}
+  \item Built a Portfolio Optimization \& Simulation tool using historical data and mean-variance optimization to generate optimal Sharpe and minimum-volatility portfolios.
+  \item Developed a Value-at-Risk tool using Monte Carlo simulations to assess potential portfolio losses from a distribution of outcomes.
+  \item Adapted an interactive Black-Scholes option pricing calculator to compute call/put prices, implied volatility, and probabilities of expiring in-the-money.
+\end{itemize}
+
+\role{R\&R Utility Limited}{Toronto, ON}{Project Management Assistant}{Sept 2021 -- Apr 2024}
+\begin{itemize}
+  \item Supported the development of corporate operating budgets, project costing, and drawdown budgets across multi-discipline engineering and construction projects.
+  \item Ran financial reconciliations on vendor invoices to resolve billing discrepancies and improve cost-tracking accuracy.
+\end{itemize}
+
+\section*{Research \& Projects}
+\project{Cluster-Constrained Portfolio Optimization}{Python, Scikit-learn}{2025 -- 2026}
+\begin{itemize}
+  \item Researched whether sector-clustering constraints improve mean-variance portfolio performance vs.\ plain MV on a 33-stock sector-stratified universe.
+  \item Built an end-to-end backtesting pipeline: Ward hierarchical clustering $\rightarrow$ cluster-constrained MV optimization $\rightarrow$ benchmarking against Plain MV and ERC across 860 rolling 5-year windows.
+  \item Showed cluster-constrained MV matches plain MV's out-of-sample Sharpe while materially lowering portfolio concentration, max drawdown, and 5\% expected shortfall.
+  \item Identified that plain MV behaves as an \emph{error maximizer}, concentrating allocations in in-sample winners; cluster constraints mitigate this without sacrificing risk-adjusted returns.
+\end{itemize}
+
+\project{Anomalies: Point-and-Click Trading Strategy Discovery Platform}{Python, DEAP, vectorbtpro, PySide6}{2025 -- Present}
+\begin{itemize}
+  \item Core builder on a small team developing a point-and-click desktop application that lets users design, backtest, and stress-test systematic trading strategies across crypto and equity markets.
+  \item Designed and built the backtesting engine, stress-testing pipeline, and evolutionary search system (DEAP) that discovers novel strategies by exploring combinations of technical-indicator signals and exit parameters.
+  \item Built the desktop UI (PySide6) and a multi-source market data layer (Yahoo Finance, Binance, dYdX, Paradex, Hyperliquid) with local SQLite caching and Turso cloud sync.
+\end{itemize}
+
+\section*{Skills}
+\noindent\textbf{Programming:} Python (Pandas, NumPy, Scikit-learn, Statsmodels), SQL, MATLAB, R, Java, VBA \\
+\textbf{Quantitative \& Finance:} Mean-variance optimization, Monte Carlo simulation, Black-Scholes, Value-at-Risk, backtesting, time-series analysis, clustering, PCA \\
+\textbf{Tools:} Adobe Analytics, Excel (LAMBDA, dynamic ranges, VBA macros), PowerPoint, Git, Jupyter \\
+\textbf{AI / Agentic Workflows:} Claude, Codex, GitHub Copilot --- agentic code generation, research, and automation
+
+\section*{Activities}
+\role{Math Tutor (Self-Employed)}{Toronto, ON}{Private High-School Mathematics Instruction}{Sept 2022 -- Present}
+\begin{itemize}
+  \item One-on-one tutoring in high-school calculus, algebra, trigonometry, and geometry; built customized lesson plans tailored to each student's learning style and academic goals.
+\end{itemize}
+
+\end{document}

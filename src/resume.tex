@@ -1,0 +1,202 @@
+%-------------------------
+% Resume — Alan Wrya
+% Compile: tectonic resume.tex
+%-------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage[margin=0.6in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}              % cleaner, more modern serif
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{microtype}            % better justification / kerning
+\usepackage{ragged2e}
+
+% --- Color palette ---
+\definecolor{accent}{HTML}{1F2A44}     % deep slate
+\definecolor{rule}{HTML}{C9CCD3}       % light rule
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+\raggedbottom
+\setlength{\tabcolsep}{0in}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=accent,
+    urlcolor=accent,
+    pdftitle={Alan Wrya — Resume},
+    pdfauthor={Alan Wrya}
+}
+
+% --- Section formatting ---
+\titleformat{\section}
+  {\vspace{2pt}\color{accent}\scshape\raggedright\Large\bfseries}
+  {}{0em}{}
+  [\vspace{-2pt}{\color{rule}\titlerule[0.8pt]}\vspace{-4pt}]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+% --- Custom commands ---
+\newcommand{\resumeItem}[1]{%
+  \item\small{#1 \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{%
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & {\small #2} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=1pt, parsep=0pt, topsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+
+%==========================================================
+\begin{document}
+
+%-----------HEADER-----------
+\begin{center}
+    {\fontsize{26pt}{30pt}\selectfont \color{accent} \scshape \textbf{Alan Wrya}} \\ \vspace{6pt}
+    \small
+    Toronto, ON \;\textbullet\;
+    \href{mailto:alan.wrya@torontomu.ca}{alan.wrya@torontomu.ca} \;\textbullet\;
+    (416) 939-5417 \\
+    \href{https://www.linkedin.com/in/alan-w-499547298/}{linkedin.com/in/alan-w} \;\textbullet\;
+    \href{https://github.com/left-nullspace}{github.com/left-nullspace}
+\end{center}
+\vspace{-6pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Toronto Metropolitan University}{Toronto, ON}
+      {Bachelor of Science (BSc), Financial Mathematics Co-op \;$|$\; Computer Science Minor}{Sept 2022 -- June 2026}
+    \resumeItemListStart
+      \resumeItem{\textbf{CGPA: 3.95} \;$|$\; Dean's List Scholar (all eligible terms)}
+      \resumeItem{\textit{Relevant Coursework:} Stochastic Calculus, Partial Differential Equations, Investment Analysis, Managerial Finance, Probability \& Statistics, Linear Algebra, Differential Equations, Data Structures, Computer Science}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {TD Bank --- Direct Investing}{Jan 2025 -- Aug 2025}
+      {Co-op, Direct Investing Journey Analyst}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Rebuilt 12+ monthly KR/OKR dashboards in Excel using \textbf{VBA}, LAMBDA functions, dynamic named ranges, and reusable chart templates --- cutting manual refresh time from 2--5 hours per week to under 5 minutes per tab.}
+        \resumeItem{Engineered automated 24-month rolling performance charts with dynamic labels, $\pm 3\sigma$ control limits, and auto-scaling axes, enabling leadership to refresh reports on demand and standardize reporting across the team.}
+        \resumeItem{Built client segmentation frameworks (Core Funded, Newly Funded, Reactivated, Attrited) and conducted correlation/regression analysis on 3 years of monthly client data to identify drivers of retention, funding, and engagement.}
+        \resumeItem{Led analytics tagging plans for new Direct Investing features --- reviewed wireframes, scoped high-value events, presented to tagging/analytics teams, and coordinated risk sign-off across product, analytics, and 1B controls.}
+        \resumeItem{Conducted feature-launch lookback analyses (e.g.\ enhanced search adoption, mobile vs.\ desktop trading behaviour) in Adobe Analytics and Excel to inform roadmap prioritization and executive-facing recommendations.}
+        \resumeItem{Took on expanded analytics, stakeholder, and reporting responsibilities during the manager's parental leave.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Ted Rogers Sales \& Trading (TRST)}{Sept 2023 -- Dec 2025}
+      {Quantitative Analyst}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Built a \textbf{Portfolio Optimization \& Simulation tool} using historical data and mean-variance optimization to generate optimal Sharpe and minimum-volatility portfolios.}
+        \resumeItem{Developed a \textbf{Value-at-Risk tool} using Monte Carlo simulations to assess potential portfolio losses from a distribution of outcomes.}
+        \resumeItem{Adapted an interactive Black-Scholes option pricing calculator to compute call/put prices, implied volatility, and probabilities of expiring in-the-money.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {R\&R Utility Limited}{Sept 2021 -- Apr 2024}
+      {Project Management Assistant}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Supported development of corporate operating budgets, project costing, and drawdown budgets across multi-discipline engineering and construction projects.}
+        \resumeItem{Conducted financial reconciliations on vendor invoices, resolving billing discrepancies and improving cost tracking accuracy.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------RESEARCH & PROJECTS-----------
+\section{Research \& Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{Cluster-Constrained Portfolio Optimization} (Undergraduate Thesis) \;$|$\; \emph{Python, Scikit-learn}}{2025 -- 2026}
+      \resumeItemListStart
+        \resumeItem{Researched whether sector-clustering constraints improve mean-variance portfolio performance vs.\ plain MV on a 33-stock sector-stratified universe.}
+        \resumeItem{Built an end-to-end backtesting pipeline: Ward hierarchical clustering $\rightarrow$ cluster-constrained MV optimization $\rightarrow$ benchmarking against Plain MV and ERC across 860 rolling 5-year windows.}
+        \resumeItem{Demonstrated cluster-constrained MV consistently outperforms plain MV out-of-sample across weekly and monthly rebalancing horizons.}
+        \resumeItem{Showed plain MV behaves as an \emph{error maximizer} --- concentrating allocations in in-sample winners and underperforming out-of-sample.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Anomalies Research --- Systematic Equity Strategies} \;$|$\; \emph{Python, Pandas, NumPy}}{2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Designed and built the end-to-end backtesting framework and stress-testing pipeline used to evaluate systematic equity anomalies.}
+        \resumeItem{Engineered modular logic for signal generation, portfolio construction, and out-of-sample validation --- enabling rapid iteration across new strategy ideas.}
+        \resumeItem{Implemented robustness checks including drawdown analysis, regime testing, and parameter-sensitivity stress tests.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Clustering-Based Selection for Investment Portfolios} \;$|$\; \emph{Python, Scikit-learn, PCA, k-means}}{Jul 2024}
+      \resumeItemListStart
+        \resumeItem{Built an unsupervised-learning tool to cluster ETFs and strategies by market correlation and risk-adjusted return features; applied PCA + k-means.}
+        \resumeItem{Validated that near-zero correlation between top selected strategies from each cluster held up in out-of-sample testing.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{ETF SQL Database Management System} \;$|$\; \emph{Python, SQLAlchemy, SQLite, yfinance}}{Aug 2024}
+      \resumeItemListStart
+        \resumeItem{Designed a Python tool to manage ETF/stock data via SQLite and SQLAlchemy, with incremental updates that fetch only data past the maximum existing date --- reducing API requests and runtime by \textbf{over 95\%} vs.\ full reload.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+        \textbf{Programming:} Python (Pandas, NumPy, Scikit-learn, Statsmodels, SQLAlchemy), SQL, MATLAB, R, Java, VBA \\
+        \textbf{Quantitative \& Finance:} Mean-variance optimization, Monte Carlo simulation, Black-Scholes, Value-at-Risk, backtesting, time-series analysis, clustering, PCA \\
+        \textbf{Tools:} Adobe Analytics, Excel (advanced --- LAMBDA, dynamic ranges, VBA macros), PowerPoint, Git, Jupyter
+    }}
+\end{itemize}
+
+
+%-----------ACTIVITIES-----------
+\section{Activities}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Math Tutor (Self-Employed)}{Sept 2022 -- Present}
+      {Private High School Mathematics Instruction}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{One-on-one tutoring in algebra, calculus, geometry, and trigonometry; built customized lesson plans tailored to individual students' learning styles and academic goals.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+\end{document}

@@ -17,6 +17,7 @@
 \usepackage{xcolor}
 \usepackage{microtype}            % better justification / kerning
 \usepackage{ragged2e}
+\usepackage{needspace}
 
 % --- Color palette ---
 \definecolor{accent}{HTML}{1F2A44}     % deep slate
@@ -30,7 +31,12 @@
 
 \urlstyle{same}
 \raggedbottom
+\RaggedRight
 \setlength{\tabcolsep}{0in}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\tolerance=1000
+\emergencystretch=3em
 
 \hypersetup{
     colorlinks=true,
@@ -53,6 +59,7 @@
 }
 
 \newcommand{\resumeSubheading}[4]{%
+  \needspace{5\baselineskip}%
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & {\small #2} \\
@@ -60,10 +67,12 @@
     \end{tabular*}\vspace{-6pt}
 }
 
-\newcommand{\resumeProjectHeading}[2]{%
-  \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & {\small #2} \\
+\newcommand{\resumeProjectHeading}[3]{%
+  \needspace{5\baselineskip}%
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      #1 & {\small #3} \\
+      \textit{\small #2} & \\
     \end{tabular*}\vspace{-6pt}
 }
 
@@ -108,14 +117,14 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {TD Bank --- Direct Investing}{Jan 2025 -- Aug 2025}
+      {TD Bank}{Jan 2025 -- Aug 2025}
       {Co-op, Direct Investing Journey Analyst}{Toronto, ON}
       \resumeItemListStart
-        \resumeItem{Rebuilt 12+ monthly KR/OKR dashboards in Excel using \textbf{VBA}, LAMBDA functions, dynamic named ranges, and reusable chart templates --- cutting manual refresh time from 2--5 hours per week to under 5 minutes per tab.}
+        \resumeItem{Rebuilt 12+ monthly KR/OKR dashboards in Excel using \textbf{VBA}, LAMBDA functions, dynamic named ranges, and reusable chart templates, reducing manual refresh time from 2-5 hours per week to under \mbox{5 minutes per dashboard.}}
         \resumeItem{Engineered automated 24-month rolling performance charts with dynamic labels, $\pm 3\sigma$ control limits, and auto-scaling axes, enabling leadership to refresh reports on demand and standardize reporting across the team.}
-        \resumeItem{Built client segmentation frameworks (Core Funded, Newly Funded, Reactivated, Attrited) and conducted correlation/regression analysis on 3 years of monthly client data to identify drivers of retention, funding, and engagement.}
-        \resumeItem{Led analytics tagging plans for new Direct Investing features --- reviewed wireframes, scoped high-value events, presented to tagging/analytics teams, and coordinated risk sign-off across product, analytics, and 1B controls.}
-        \resumeItem{Conducted feature-launch lookback analyses (e.g.\ enhanced search adoption, mobile vs.\ desktop trading behaviour) in Adobe Analytics and Excel to inform roadmap prioritization and executive-facing recommendations.}
+        \resumeItem{Built client segmentation frameworks (Core Funded, Newly Funded, Reactivated, Attrited) and ran correlation and regression analysis on three years of monthly client data to surface drivers of retention, \mbox{funding, and engagement.}}
+        \resumeItem{Led analytics tagging plans for new Direct Investing features: reviewed wireframes, scoped high-value events, presented to tagging and analytics teams, and coordinated risk sign-off across product, \mbox{analytics, and 1B controls.}}
+        \resumeItem{Ran feature-launch lookback analyses on enhanced search adoption and mobile vs.\ desktop trading behaviour in Adobe Analytics and Excel to inform roadmap prioritization and executive-facing recommendations.}
         \resumeItem{Took on expanded analytics, stakeholder, and reporting responsibilities during the manager's parental leave.}
       \resumeItemListEnd
 
@@ -132,8 +141,8 @@
       {R\&R Utility Limited}{Sept 2021 -- Apr 2024}
       {Project Management Assistant}{Toronto, ON}
       \resumeItemListStart
-        \resumeItem{Supported development of corporate operating budgets, project costing, and drawdown budgets across multi-discipline engineering and construction projects.}
-        \resumeItem{Conducted financial reconciliations on vendor invoices, resolving billing discrepancies and improving cost tracking accuracy.}
+        \resumeItem{Supported the development of corporate operating budgets, project costing, and drawdown budgets across multi-discipline engineering and construction projects.}
+        \resumeItem{Ran financial reconciliations on vendor invoices to resolve billing discrepancies and \mbox{improve cost-tracking accuracy.}}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -144,33 +153,24 @@
   \resumeSubHeadingListStart
 
     \resumeProjectHeading
-      {\textbf{Cluster-Constrained Portfolio Optimization} (Undergraduate Thesis) \;$|$\; \emph{Python, Scikit-learn}}{2025 -- 2026}
+      {\textbf{Cluster-Constrained Portfolio Optimization}}
+      {Python, Scikit-learn}
+      {2025 -- 2026}
       \resumeItemListStart
         \resumeItem{Researched whether sector-clustering constraints improve mean-variance portfolio performance vs.\ plain MV on a 33-stock sector-stratified universe.}
         \resumeItem{Built an end-to-end backtesting pipeline: Ward hierarchical clustering $\rightarrow$ cluster-constrained MV optimization $\rightarrow$ benchmarking against Plain MV and ERC across 860 rolling 5-year windows.}
-        \resumeItem{Demonstrated cluster-constrained MV consistently outperforms plain MV out-of-sample across weekly and monthly rebalancing horizons.}
-        \resumeItem{Showed plain MV behaves as an \emph{error maximizer} --- concentrating allocations in in-sample winners and underperforming out-of-sample.}
+        \resumeItem{Demonstrated cluster-constrained MV consistently beats plain MV out-of-sample at \mbox{both weekly and monthly rebalancing.}}
+        \resumeItem{Showed plain MV behaves as an \emph{error maximizer}, concentrating allocations in in-sample winners \mbox{and lagging out-of-sample.}}
       \resumeItemListEnd
 
     \resumeProjectHeading
-      {\textbf{Anomalies Research --- Systematic Equity Strategies} \;$|$\; \emph{Python, Pandas, NumPy}}{2025 -- Present}
+      {\textbf{Anomalies}: Point-and-Click Trading Strategy Discovery Platform}
+      {Python, DEAP, vectorbtpro, PySide6}
+      {2025 -- Present}
       \resumeItemListStart
-        \resumeItem{Designed and built the end-to-end backtesting framework and stress-testing pipeline used to evaluate systematic equity anomalies.}
-        \resumeItem{Engineered modular logic for signal generation, portfolio construction, and out-of-sample validation --- enabling rapid iteration across new strategy ideas.}
-        \resumeItem{Implemented robustness checks including drawdown analysis, regime testing, and parameter-sensitivity stress tests.}
-      \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{Clustering-Based Selection for Investment Portfolios} \;$|$\; \emph{Python, Scikit-learn, PCA, k-means}}{Jul 2024}
-      \resumeItemListStart
-        \resumeItem{Built an unsupervised-learning tool to cluster ETFs and strategies by market correlation and risk-adjusted return features; applied PCA + k-means.}
-        \resumeItem{Validated that near-zero correlation between top selected strategies from each cluster held up in out-of-sample testing.}
-      \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{ETF SQL Database Management System} \;$|$\; \emph{Python, SQLAlchemy, SQLite, yfinance}}{Aug 2024}
-      \resumeItemListStart
-        \resumeItem{Designed a Python tool to manage ETF/stock data via SQLite and SQLAlchemy, with incremental updates that fetch only data past the maximum existing date --- reducing API requests and runtime by \textbf{over 95\%} vs.\ full reload.}
+        \resumeItem{Core builder on a small team developing a point-and-click desktop application that lets users design, backtest, and stress-test systematic trading strategies across crypto and equity markets.}
+        \resumeItem{Designed and built the backtesting engine, stress-testing pipeline, and evolutionary search system (DEAP) that discovers novel strategies by exploring combinations of technical-indicator signals and exit parameters.}
+        \resumeItem{Built the desktop UI (PySide6) and a multi-source market data layer (Yahoo Finance, Binance, dYdX, Paradex, Hyperliquid) with local SQLite caching and Turso cloud sync.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -182,7 +182,7 @@
     \small{\item{
         \textbf{Programming:} Python (Pandas, NumPy, Scikit-learn, Statsmodels, SQLAlchemy), SQL, MATLAB, R, Java, VBA \\
         \textbf{Quantitative \& Finance:} Mean-variance optimization, Monte Carlo simulation, Black-Scholes, Value-at-Risk, backtesting, time-series analysis, clustering, PCA \\
-        \textbf{Tools:} Adobe Analytics, Excel (advanced --- LAMBDA, dynamic ranges, VBA macros), PowerPoint, Git, Jupyter
+        \textbf{Tools:} Adobe Analytics, Excel (LAMBDA, dynamic ranges, VBA macros), PowerPoint, Git, Jupyter
     }}
 \end{itemize}
 
@@ -192,9 +192,9 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Math Tutor (Self-Employed)}{Sept 2022 -- Present}
-      {Private High School Mathematics Instruction}{Toronto, ON}
+      {Private High-School Mathematics Instruction}{Toronto, ON}
       \resumeItemListStart
-        \resumeItem{One-on-one tutoring in algebra, calculus, geometry, and trigonometry; built customized lesson plans tailored to individual students' learning styles and academic goals.}
+        \resumeItem{One-on-one tutoring in high-school calculus, algebra, trigonometry, and geometry; built customized lesson plans tailored to each student's learning style and academic goals.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
